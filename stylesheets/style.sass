@@ -1,10 +1,38 @@
 $body-bg: transparent
+$font-stack:    Cursive, sans-serif
+$body-font-stack: sans-serif
+$bold: 900
+$border-color: white
+$background-url: url(https://josephlivengood.github.io/Meal-Prep-Box/resources/light-fabric-texture.jpg)
+$heading-background: rgba(120,120,120,.5)
+
+@mixin default-box
+    border: 7px dashed $border-color
+    clear: both
+    display: block
+    margin: 5px 0
+    padding: 5px 0
 
 body
-    font: 100% Helvetica, sans-serif
-    background: url(https://josephlivengood.github.io/Meal-Prep-Box/resources/light-fabric-texture.jpg)
-    color: red
+    font: 100% $body-font-stack
+    background: $background-url
+    color: red /*To find text unformatted*/
 
+.heading
+    @include default-box
+    text-align: center
+    background-color: $heading-background
+    margin: 30px 25% 50px 25%
+    h1
+        font: 48px $font-stack
+        margin: 0% 0% 0% 0%
+        color: grey
+        font-weight: $bold
+    p
+        font: 18px $font-stack
+        magin: 10px 0% 10px 0%
+        color: white
+    
 footer
     background-color: #333
     width: 100%
@@ -18,3 +46,37 @@ footer
     a
         font-size: 16px
         color: white
+          
+
+@keyframes rubberBand
+    from
+        transform: scale3d(1, 1, 1)
+    30%
+        transform: scale3d(1.25, 0.75, 1)
+    40%
+        transform: scale3d(0.75, 1.25, 1)
+    50%
+        transform: scale3d(1.15, 0.85, 1)
+    65%
+        transform: scale3d(.95, 1.05, 1)
+    75%
+        transform: scale3d(1.05, .95, 1)
+    to
+        transform: scale3d(1, 1, 1)
+
+@mixin stretch
+    animation-name: rubberBand
+    animation-duration: 2s
+    animation-timing-function: ease
+
+#icon-with-animation
+    display: inline-block
+    height: 100px
+    width: 100px
+    margin: 50px
+    border-radius: 50px
+    background-color: black
+  
+    &.clicked
+        background-color: blue
+        @include stretch

@@ -23,6 +23,11 @@ var Heading = React.createClass({
         "h1",
         null,
         "Meal Prep Box"
+      ),
+      React.createElement(
+        "p",
+        null,
+        "You have to eat right for the fat to take flight."
       )
     );
   }
@@ -42,3 +47,7 @@ var PageContent = React.createClass({
 });
 
 ReactDOM.render(React.createElement(PageContent, null), document.getElementById("content"));
+
+$(".icon").on("click", function() { 
+  $(this).toggleClass("clicked")
+})
