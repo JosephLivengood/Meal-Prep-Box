@@ -1,11 +1,15 @@
+'use strict';
+
 var HelloWorld = React.createClass({
-  render: function(){
-    return (
-      <div>
-        Hello, Livengood!
-      </div>
-    )
+  displayName: 'HelloWorld',
+
+  render: function render() {
+    return React.createElement(
+      'div',
+      null,
+      'Hello, Livengood!'
+    );
   }
 });
 
-ReactDOM.render(<HelloWorld />, document.getElementById('content'));
+ReactDOM.render(React.createElement(HelloWorld, null), document.getElementById('content'));
