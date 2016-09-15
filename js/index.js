@@ -33,6 +33,18 @@ var Heading = React.createClass({
   }
 });
 
+var Landing = React.createClass({
+  displayName: "Landing",
+
+  render: function render() {
+    return React.createElement(
+      "div",
+      { className: "landing" },
+      React.createElement("div", { "class": "icon", id: "icon-with-animation" })
+    );
+  }
+});
+
 var PageContent = React.createClass({
   displayName: "PageContent",
 
@@ -41,13 +53,10 @@ var PageContent = React.createClass({
       "div",
       { className: "pagecontent" },
       React.createElement(Heading, null),
+      React.createElement(Landing, null),
       React.createElement(HelloWorld, null)
     );
   }
 });
 
 ReactDOM.render(React.createElement(PageContent, null), document.getElementById("content"));
-
-$(".icon").on("click", function() { 
-  $(this).toggleClass("clicked")
-})

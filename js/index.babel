@@ -1,3 +1,4 @@
+
 var HelloWorld = React.createClass({
   render: function(){
     return (
@@ -19,11 +20,22 @@ var Heading = React.createClass({
   }
 });
 
+var Landing = React.createClass({
+  render: function() {
+    return (
+      <div className="landing">
+        <div class="icon" id="icon-with-animation"></div>
+      </div>
+    );
+  }
+});
+
 var PageContent = React.createClass({
   render: function() {
     return (
       <div className="pagecontent">
         <Heading />
+        <Landing />
         <HelloWorld />
       </div>
     );
@@ -31,7 +43,3 @@ var PageContent = React.createClass({
 });
 
 ReactDOM.render(<PageContent />, document.getElementById('content'));
-
-$(".icon").on("click", function() { 
-  $(this).toggleClass("clicked")
-})
