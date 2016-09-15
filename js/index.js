@@ -37,11 +37,7 @@ var Landing = React.createClass({
   displayName: "Landing",
 
   render: function render() {
-    return React.createElement(
-      "div",
-      { className: "landing" },
-      React.createElement("div", { "class": "icon", id: "icon-with-animation" })
-    );
+    return React.createElement("div", { className: "landing" });
   }
 });
 
