@@ -1,6 +1,17 @@
 body {
   font: 100% Helvetica, sans-serif;
   background-color: #efefef;
-  font-color: red; }
+  color: red; }
+
+footer {
+  background-color: #333;
+  width: 100%;
+  bottom: 0;
+  position: fixed; }
+  footer p {
+    text-align: center;
+    padding-top: 5px;
+    font-size: 14px;
+    color: white; }
 
 /*# sourceMappingURL=style.css.map */
