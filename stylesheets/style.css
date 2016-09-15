@@ -1,6 +1,6 @@
 body {
   font: 100% Helvetica, sans-serif;
-  background-color: #efefef;
+  background: url(https://josephlivengood.github.io/Meal-Prep-Box/resources/light-fabric-texture.jpg);
   color: red; }
 
 footer {
@@ -12,6 +12,9 @@ footer {
     text-align: center;
     padding-top: 5px;
     font-size: 14px;
+    color: white; }
+  footer a {
+    font-size: 16px;
     color: white; }
 
 /*# sourceMappingURL=style.css.map */
