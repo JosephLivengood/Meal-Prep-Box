@@ -8,4 +8,30 @@ var HelloWorld = React.createClass({
   }
 });
 
-ReactDOM.render(<HelloWorld />, document.getElementById('content'));
+var Heading = React.createClass({
+  render: function() {
+    return (
+      <div className="heading">
+        <h1>Meal Prep Box</h1>
+        <p>You have to eat right for the fat to take flight.</p>
+      </div>
+    );
+  }
+});
+
+var PageContent = React.createClass({
+  render: function() {
+    return (
+      <div className="pagecontent">
+        <Heading />
+        <HelloWorld />
+      </div>
+    );
+  }
+});
+
+ReactDOM.render(<PageContent />, document.getElementById('content'));
+
+$(".icon").on("click", function() { 
+  $(this).toggleClass("clicked")
+})
