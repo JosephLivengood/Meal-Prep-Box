@@ -24,7 +24,6 @@ var Landing = React.createClass({
   render: function() {
     return (
       <div className="landing">
-        <div class="icon" id="icon-with-animation"></div>
       </div>
     );
   }
