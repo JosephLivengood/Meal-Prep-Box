@@ -119,6 +119,7 @@ var RecipeAdd = React.createClass({
   },
   add: function add() {
     var title = document.getElementById("title").value;
+    var imgf = document.getElementById("imgf").value;
     var ingredients = document.getElementById("ingredients").value.split(",");
     var exists = false;
     for (var i = 0; i < recipes.length; i++) {
@@ -130,7 +131,7 @@ var RecipeAdd = React.createClass({
     }
     if (!exists) {
       if (title.length < 1) title = "Untitled";
-      recipes.push({ title: title, ingredients: document.getElementById("ingredients").value.split(",") });
+      recipes.push({ title: title, ingredients: document.getElementById("ingredients").value.split(","), imgf: imgf });
     }
     update();
     this.close();
@@ -168,6 +169,7 @@ var RecipeAdd = React.createClass({
             "form",
             null,
             React.createElement(Input, { type: "text", label: "Recipe", placeholder: "Recipe Name", id: "title" }),
+            React.createElement(Input, { type: "text", label: "Image", placeholder: "http://link.to/your.image", id: "imgf" }),
             React.createElement(Input, { type: "textarea", label: "Ingredients", placeholder: "Enter Ingredients,Separated,By Commas", id: "ingredients" })
           )
         ),
