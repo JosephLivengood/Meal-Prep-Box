@@ -1,7 +1,13 @@
 body {
   font: 100% sans-serif;
   background: url(https://josephlivengood.github.io/Meal-Prep-Box/resources/light-fabric-texture.jpg);
-  color: red; }
+  color: black;
+  text-align: center; }
+
+img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%; }
 
 .heading {
   border: 7px dashed white;
@@ -24,6 +30,7 @@ body {
 
 footer {
   background-color: #333;
+  margin-top: 50px;
   width: 100%;
   bottom: 0;
   position: fixed; }

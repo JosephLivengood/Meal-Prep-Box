@@ -10,7 +10,7 @@ var OverlayTrigger = ReactBootstrap.OverlayTrigger;
 var ListGroup = ReactBootstrap.ListGroup,
     ListGroupItem = ReactBootstrap.ListGroupItem;
 
-var recipes = typeof localStorage["_Livengood_Meals"] != "undefined" ? JSON.parse(localStorage["_Livengood_Meals"]) : [{ title: "Paleo Toast", ingredients: ["Steak Break", "Grill"], imgf: "http://www.jpband.com/wp-content/uploads/2009/10/toast.jpg" }, { title: "Low-carb Pasta", ingredients: ["Air noodles", "Water", "Meat"], imgf: "#" }],
+var recipes = typeof localStorage["_Livengood_Meals"] != "undefined" ? JSON.parse(localStorage["_Livengood_Meals"]) : [{ title: "Paleo Toast", ingredients: ["Steak", "Grill", "Love"], imgf: "https://chicolockersausage.files.wordpress.com/2012/01/grilled-rare-steak.jpg" }, { title: "Low-carb Pasta", ingredients: ["Air noodles", "Water", "Meat"], imgf: "http://www.jpband.com/wp-content/uploads/2009/10/toast.jpg" }],
     globalTitle = "",
     globalIngredients = [],
     globalImgf = "";
@@ -141,50 +141,54 @@ var RecipeAdd = React.createClass({
       "div",
       null,
       React.createElement(
-        Button,
-        {
-          bsStyle: "primary",
-          bsSize: "large",
-          onClick: this.open,
-          id: "show"
-        },
-        "Add Recipe"
-      ),
-      React.createElement(
-        Modal,
-        { show: this.state.showModal, onHide: this.close },
+        "center",
+        null,
         React.createElement(
-          Modal.Header,
-          { closeButton: true },
-          React.createElement(
-            Modal.Title,
-            { id: "modalTitle" },
-            "Add a Recipe"
-          )
+          Button,
+          {
+            bsStyle: "primary",
+            bsSize: "large",
+            onClick: this.open,
+            id: "show"
+          },
+          "Add Recipe"
         ),
         React.createElement(
-          Modal.Body,
-          null,
+          Modal,
+          { show: this.state.showModal, onHide: this.close },
           React.createElement(
-            "form",
-            null,
-            React.createElement(Input, { type: "text", label: "Recipe", placeholder: "Recipe Name", id: "title" }),
-            React.createElement(Input, { type: "text", label: "Image", placeholder: "http://link.to/your.image", id: "imgf" }),
-            React.createElement(Input, { type: "textarea", label: "Ingredients", placeholder: "Enter Ingredients,Separated,By Commas", id: "ingredients" })
-          )
-        ),
-        React.createElement(
-          Modal.Footer,
-          null,
-          React.createElement(
-            Button,
-            { onClick: this.add, bsStyle: "primary", id: "addButton" },
-            "Add Recipe"
+            Modal.Header,
+            { closeButton: true },
+            React.createElement(
+              Modal.Title,
+              { id: "modalTitle" },
+              "Add a Recipe"
+            )
           ),
           React.createElement(
-            Button,
-            { onClick: this.close },
-            "Close"
+            Modal.Body,
+            null,
+            React.createElement(
+              "form",
+              null,
+              React.createElement(Input, { type: "text", label: "Recipe", placeholder: "Recipe Name", id: "title" }),
+              React.createElement(Input, { type: "text", label: "Image", placeholder: "http://link.to/your.image", id: "imgf" }),
+              React.createElement(Input, { type: "textarea", label: "Ingredients", placeholder: "Enter Ingredients,Separated,By Commas", id: "ingredients" })
+            )
+          ),
+          React.createElement(
+            Modal.Footer,
+            null,
+            React.createElement(
+              Button,
+              { onClick: this.add, bsStyle: "primary", id: "addButton" },
+              "Add Recipe"
+            ),
+            React.createElement(
+              Button,
+              { onClick: this.close },
+              "Close"
+            )
           )
         )
       )
@@ -219,7 +223,7 @@ var Heading = React.createClass({
       React.createElement(
         "h1",
         null,
-        "Meal Prep Box"
+        "Recipe Box"
       ),
       React.createElement(
         "p",

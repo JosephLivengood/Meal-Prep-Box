@@ -6,8 +6,8 @@ var OverlayTrigger = ReactBootstrap.OverlayTrigger;
 var ListGroup = ReactBootstrap.ListGroup,ListGroupItem = ReactBootstrap.ListGroupItem;
 
 var recipes = (typeof localStorage["_Livengood_Meals"] != "undefined") ? JSON.parse(localStorage["_Livengood_Meals"]) : [
-  {title: "Paleo Toast", ingredients: ["Steak Break", "Grill"], imgf: "http://www.jpband.com/wp-content/uploads/2009/10/toast.jpg"}, 
-  {title: "Low-carb Pasta", ingredients: ["Air noodles", "Water", "Meat"], imgf: "#"}
+  {title: "Paleo Toast", ingredients: ["Steak", "Grill", "Love"], imgf: "https://chicolockersausage.files.wordpress.com/2012/01/grilled-rare-steak.jpg"}, 
+  {title: "Low-carb Pasta", ingredients: ["Air noodles", "Water", "Meat"], imgf: "http://www.jpband.com/wp-content/uploads/2009/10/toast.jpg"}
 ], globalTitle = "", globalIngredients = [], globalImgf = "";
 
 var RecipeBook = React.createClass({
@@ -111,6 +111,7 @@ var RecipeAdd = React.createClass({
   render: function() {
     return (
       <div>
+          <center>
         <Button
           bsStyle="primary"
           bsSize="large"
@@ -135,6 +136,7 @@ var RecipeAdd = React.createClass({
             <Button onClick={this.close}>Close</Button>
           </Modal.Footer>
         </Modal>
+          </center>
       </div>
     );
   }
@@ -162,7 +164,7 @@ var Heading = React.createClass({
   render: function() {
     return (
       <div className="heading">
-        <h1>Meal Prep Box</h1>
+        <h1>Recipe Box</h1>
         <p>You have to eat right for the fat to take flight.</p>
       </div>
     );
